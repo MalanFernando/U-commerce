@@ -7,6 +7,7 @@ import { filterCategoryProducts } from '../store/slices/products.slice';
 import { useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { addProductToCart } from '../store/slices/cart.slice';
+import { motion } from 'framer-motion';
 
 const ProductDetail = () => {
 
@@ -54,13 +55,21 @@ const ProductDetail = () => {
         <section className='product-detail'>
             <section className='content-product_detail content'>
                 <div className='detail-content'>
-                    <picture className='cont-imgs'>
-                        {
-                            productDetail.productImgs?.map(img=> (
-                                <img className='img-product' key={img} src={img} alt="" />
-                            ))
-                        }
-                    </picture>
+                    <motion.div className='cont-slider'>
+                            <motion.div 
+                                className='slider' 
+                                drag='x'
+                                dragConstraints={{right:0, left:-447.614}}
+                            >
+                                {
+                                    productDetail.productImgs?.map(img=> (
+                                    <motion.div className='item-img' key={img}>
+                                        <img className='img-product' src={img} alt="" />
+                                    </motion.div>
+                                ))
+                                }
+                            </motion.div>
+                    </motion.div>
                 </div>
                 <article className='detail-info'>
                     <h3 className='info-title'>{productDetail?.title}</h3>
