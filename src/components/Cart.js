@@ -3,6 +3,7 @@ import '../css/cart.css'
 import { useSelector, useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router-dom'
 import { addPurchases } from '../store/slices/purchases.slice';
+import { removeProductToCart } from '../store/slices/cart.slice';
 
 const Cart = () => {
 
@@ -33,9 +34,11 @@ const Cart = () => {
                                     <span className='num-price'><sup>$</sup>{product.price}</span>
                                 </div>
                             </div>
-                            {/* <button className='item-btn-trash btns-format'>
+                            <button 
+                                className='item-btn-trash btns-format' 
+                                onClick={()=> dispatch(removeProductToCart(product.id))}>
                                 <i className="fa-solid fa-trash"></i>
-                            </button> */}
+                            </button>
                         </div>
                     ))
                 }

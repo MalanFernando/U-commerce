@@ -1,6 +1,6 @@
 .overlay{
     background-color: #131313b9;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
