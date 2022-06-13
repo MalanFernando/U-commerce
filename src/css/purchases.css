@@ -1,0 +1,37 @@
+.purchases-title{
+    margin: 0 0 2rem 0;
+}
+
+.item-products{
+    margin: 1.5rem 0;
+    padding-bottom: .5rem;
+    box-shadow: 0 0px 20px -12px #535a5c;
+}
+.products-title{
+    background-color: #191b1b;
+    color: #fff;
+    padding: .5rem; 
+}
+.product{
+    background-color: #d3dada;
+    border-radius: 2px;
+    padding: .5rem;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.prod-title{
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+.prod-quantity{
+    text-align: center;
+    font-size: .8rem;
+    margin: 0 1rem;
+}
+.prod-price{
+    font-size: .9rem;
+}

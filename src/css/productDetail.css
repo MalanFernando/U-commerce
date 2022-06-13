@@ -1,0 +1,91 @@
+.content-product_detail{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.cont-imgs{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.img-product{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: .5rem 1rem;
+    position: absolute;
+}
+.detail-info{
+    margin-top: 2rem;
+}
+@media screen and (min-width: 767px) {
+    .content-product_detail{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cont-imgs{
+        margin: 0 1.5rem;
+    }
+    .detail-info{
+        margin: 0 0 0 1rem;
+    }
+}
+.info-price{
+    display: inline-block;
+    font-weight: 450;
+    font-size: 1.3rem;
+    margin: 2rem 0;
+}
+.info-description{
+    font-size: .9rem;
+    line-height: 1.5rem;
+    letter-spacing: .01rem;
+}
+.info-btns_interactive{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 2rem 0 0 0;
+}
+.btns-format{
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.interac-quantity{
+    margin-right: 1rem;
+}
+.quantity{
+    padding: .2rem .8rem;
+}
+.btn-min, .btn-max{
+    background-color: #0e0f0f;
+    color: #fff;
+    padding: .1rem .7rem;
+    font-size: 1.3rem;
+}
+.btn-min:active, .btn-max:active{
+    transform: scale(.99);
+}
+
+.interac-btn_buy{
+    background-color: #3f8686;
+    outline: 2px solid #0e0f0f;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem 1.3rem;
+    margin: 1rem 0;
+    transition: 200ms linear;
+}
+.interac-btn_buy:hover{
+    background-color: #0e0f0f;
+    color: #fff;
+}
+
+/* Estilos para el titlte de card */
+.title-discover-items{
+    margin: .5rem 1rem;
+}

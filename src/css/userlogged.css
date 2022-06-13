@@ -1,0 +1,19 @@
+.content-user{
+    text-align: center;
+}
+.profile-content_img{
+    width: 70px;
+    height: 70px;
+    margin: .8rem auto;
+}
+.img-user{
+    width: 100%;
+}
+#user-btn{
+    background-color: #0e1110;
+    color: #fff;
+    padding: .3rem 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    box-shadow: 2px 0px 20px -10px #0d0e0d;
+}
