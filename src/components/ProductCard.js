@@ -3,6 +3,7 @@ import '../css/productCard.css'
 import { Link, useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProductToCart } from '../store/slices/cart.slice';
+import {increment} from '../store/slices/counter.slice'
 
 const ProductCard = ({product}) => {
 
@@ -18,6 +19,7 @@ const ProductCard = ({product}) => {
         }
         if (localStorage.getItem("token")) {
             dispatch(addProductToCart(productChoose))
+            dispatch(increment())
         } else {
             navigate("/login")
         }

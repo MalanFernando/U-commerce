@@ -1,3 +1,6 @@
+.head{
+    display: grid;
+}
 .head-nav-bar{
     display: flex;
     justify-content: center;
@@ -50,24 +53,27 @@
 }
 
 .cart{
-    width: 300px;
-    min-height: 100vh;
-    background-color: #EAEAEA;
+    justify-self: flex-end;
     position: fixed;
-    right: -300px;
     top: 4.4rem;
-    z-index: 12;
-    transition: 200ms linear;
+    margin: 0 .3rem;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(.5);
+    visibility: hidden;
+    transition: 150ms ease-out;
 }
-
-@media screen and (min-width:767px) {
+@media screen and (min-width:500px) {
     .cart{
-        min-height: 800px;
+        top: 3.5rem;
+        margin-right: 5rem;
     }
 }
 
 .open{
-    right: 0;
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
 }
 
 .cart-count{

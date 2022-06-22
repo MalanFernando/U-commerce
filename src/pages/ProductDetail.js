@@ -7,6 +7,7 @@ import { filterCategoryProducts } from '../store/slices/products.slice';
 import { useNavigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { addProductToCart } from '../store/slices/cart.slice';
+import {increment} from '../store/slices/counter.slice'
 import { motion } from 'framer-motion';
 
 const ProductDetail = () => {
@@ -45,6 +46,7 @@ const ProductDetail = () => {
         }
         if (localStorage.getItem("token")) {
             dispatch(addProductToCart(productChoose))
+            dispatch(increment())
         } else {
             navigate("/login")
         }

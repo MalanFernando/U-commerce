@@ -34,9 +34,9 @@ export const addProductToCart = (productChoose) => (dispatch) => {
         .finally(() => dispatch(setIsLoading(false)));
 }
 
-export const removeProductToCart = (productId) => (dispatch) => {
+export const removeProductToCart = (id) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${productId}`, getConfig())
+    return axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`, getConfig())
         .then(() => dispatch(getCart()))
         .finally(() => dispatch(setIsLoading(false)));
 }
