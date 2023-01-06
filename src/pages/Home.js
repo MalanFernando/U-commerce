@@ -16,11 +16,11 @@ const Home = () => {
     useEffect(()=>{
         dispatch(getProducts());
 
-        axios.get("https://ecommerce-api-react.herokuapp.com/api/v1/products/categories")
+        axios.get("https://e-commerce-api.academlo.tech/api/v1/products/categories")
             .then(res=> setCategories(res.data.data.categories))
     },[dispatch])
 
-    const categoriesSlice = categories.slice(0,-1);
+    // const categoriesSlice = categories.slice(0,-1);
 
     const productsSearched = (e)=>{
         e.preventDefault();
@@ -39,11 +39,12 @@ const Home = () => {
                     <div className='categories'>
                         <button className='category-btn' onClick={()=> dispatch(getProducts())}>All</button>
                         {
-                            categoriesSlice.map(category=>(
+                            categories.map(category=>(
                                 <button className='category-btn' onClick={()=> categorySelected(category.id)} key={category.id}>
+                                    {category.name === "Kitchen" && <i className="fa-solid fa-kitchen-set"></i>}
                                     {category.name === "Smart TV" && <i className="fa-solid fa-tv"></i>}
-                                    {category.name === "Computers" && <i className="fa-solid fa-laptop"></i>}
                                     {category.name === "Smartphones" && <i className="fa-solid fa-mobile-screen"></i>}
+                                    {category.name === "Computers" && <i className="fa-solid fa-laptop"></i>}
                                     {category.name}
                                 </button>
                             ))

@@ -11,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate()
 
     const submit = (data)=>{
-        axios.post("https://ecommerce-api-react.herokuapp.com/api/v1/users/login", data)
+        axios.post("https://e-commerce-api.academlo.tech/api/v1/users/login", data)
             .then(res=> {
                 localStorage.setItem("token", res.data.data.token);
                 localStorage.setItem("userName", res.data.data.user.firstName + " " + res.data.data.user.lastName);
@@ -25,8 +25,8 @@ const Login = () => {
                 <p className='info-instructions'>Welcome! Enter your email and password to continue</p>
                 <div className='info-test'>
                     <h3>Test data</h3>
-                    <p><i className="fa-solid fa-envelope"></i>admin-user@gmail.com</p>
-                    <p><i className="fa-solid fa-lock"></i>userdev1234</p>
+                    <p><i className="fa-solid fa-envelope"></i>john@gmail.com</p>
+                    <p><i className="fa-solid fa-lock"></i>john1234</p>
                 </div>
             </div>
             <form className='login-form' action="" onSubmit={handleSubmit(submit)}>

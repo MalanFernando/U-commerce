@@ -18,14 +18,14 @@ export const { setPurchases } = purchasesSlice.actions;
 
 export const getPurchases = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/purchases', getConfig())
+    return axios.get('https://e-commerce-api.academlo.tech/api/v1/purchases', getConfig())
         .then((res) => dispatch(setPurchases(res.data.data.purchases)))
         .finally(() => dispatch(setIsLoading(false)));
 }
 
 export const addPurchases = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/purchases', {}, getConfig())
+    return axios.post('https://e-commerce-api.academlo.tech/api/v1/purchases', {}, getConfig())
         .then(() => {
             dispatch(setCart([]))
             dispatch(getPurchases())

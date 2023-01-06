@@ -17,7 +17,7 @@ export const { setCart } = cartSlice.actions;
 
 export const getCart = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/cart', getConfig())
+    return axios.get('https://e-commerce-api.academlo.tech/api/v1/cart', getConfig())
         .then((res) => dispatch(setCart(res.data.data.cart)))
         .catch(error => {
             if (error.response.status === 404) {
@@ -29,14 +29,14 @@ export const getCart = () => (dispatch) => {
 
 export const addProductToCart = (productChoose) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/cart', productChoose, getConfig())
+    return axios.post('https://e-commerce-api.academlo.tech/api/v1/cart', productChoose, getConfig())
         .then(() => dispatch(getCart()))
         .finally(() => dispatch(setIsLoading(false)));
 }
 
 export const removeProductToCart = (id) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`, getConfig())
+    return axios.delete(`https://e-commerce-api.academlo.tech/api/v1/cart/${id}`, getConfig())
         .then(() => dispatch(getCart()))
         .finally(() => dispatch(setIsLoading(false)));
 }

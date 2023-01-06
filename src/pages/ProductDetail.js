@@ -26,7 +26,7 @@ const ProductDetail = () => {
             top: 50,
             behavior: 'smooth'
         });
-        axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/`)
+        axios.get(`https://e-commerce-api.academlo.tech/api/v1/products/`)
             .then(res => {
                 const response = res.data.data.products;
                 // console.log(response);
